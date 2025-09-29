@@ -1,1 +1,1 @@
-# lang-translate-api-deepl
+# Lang Translate Api Deepl Readme
