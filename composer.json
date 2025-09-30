@@ -1,7 +1,7 @@
 {
     "name": "componist/lang-translate-api-deepl",
     "keywords": [],
-    "homepage": "",
+    "homepage": "https://componist.dev",
     "license": "MIT",
     "authors": [
         {
@@ -10,9 +10,7 @@
             "role": "Developer"
         }
     ],
-    "require": {
-        "componist/core": "^1.0.0"
-    },
+    "require": {},
     "require-dev": {},
     "autoload": {
         "psr-4": {

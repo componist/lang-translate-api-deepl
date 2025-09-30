@@ -61,7 +61,7 @@ Ein Laravel Package zum automatischen Übersetzen von Sprachdateien mit der Deep
 ### 1. Package installieren
 
 ```bash
-composer require componist/lang-translate-api-deepl
+composer require componist/lang-translate-api-deepl --dev
 ```
 
 ### 2. Service Provider registrieren
