@@ -70,24 +70,15 @@ Der Service Provider wird automatisch registriert. Falls Sie Laravel 5.5+ verwen
 
 ### 3. DeepL API Key konfigurieren
 
-Fügen Sie Ihren DeepL API Key zur `config/services.php` hinzu:
+Fügen Sie Ihren DeepL API Key zur `.env` hinzu:
 
 ```php
-// config/services.php
-'deepl' => [
-    'api_key' => env('DEEPL_API_KEY'),
-],
-```
-
-### 4. Umgebungsvariablen setzen
-
-Fügen Sie Ihren DeepL API Key zur `.env` Datei hinzu:
-
-```env
+// .env
 DEEPL_API_KEY=your_deepl_api_key_here
 ```
 
-### 5. DeepL API Key erhalten
+
+### 4. DeepL API Key erhalten
 
 1. Registrieren Sie sich auf [DeepL API](https://www.deepl.com/pro-api)
 2. Erstellen Sie einen kostenlosen API Key (500.000 Zeichen/Monat)
@@ -101,17 +92,7 @@ DEEPL_API_KEY=your_deepl_api_key_here
 |----------|-------------|----------|
 | `DEEPL_API_KEY` | Ihr DeepL API Key | - |
 
-### Service Provider Konfiguration
 
-```php
-// config/services.php
-return [
-    // ... andere Services
-    'deepl' => [
-        'api_key' => env('DEEPL_API_KEY'),
-    ],
-];
-```
 
 ## 🎮 Verwendung
 

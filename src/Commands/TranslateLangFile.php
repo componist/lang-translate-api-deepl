@@ -48,7 +48,7 @@ class TranslateLangFile extends Command
         }
 
         // Check for DeepL API key
-        $apiKey = config('services.deepl.api_key');
+        $apiKey = env('DEEPL_API_KEY');
         if (!$apiKey) {
             $this->error('DeepL API key not configured. Please set DEEPL_API_KEY in your .env file.');
             return 1;
