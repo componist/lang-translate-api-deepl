@@ -4,30 +4,24 @@ declare(strict_types=1);
 
 namespace Componist\LangTranslateApiDeepl;
 
-use Illuminate\Support\ServiceProvider;
 use Componist\LangTranslateApiDeepl\Commands\TranslateLangFile;
+use Illuminate\Support\ServiceProvider;
 
 class LangTranslateApiDeeplServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
-        //
+        $this->mergeConfigFrom(__DIR__.'/../config/lang-translate-api-deepl.php', 'lang-translate-api-deepl');
     }
 
-    /**
-     * Bootstrap services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         $this->commands([
             TranslateLangFile::class,
         ]);
+
+        $this->publishes([
+            __DIR__.'/../config/lang-translate-api-deepl.php' => config_path('lang-translate-api-deepl.php'),
+        ], 'lang-translate-api-deepl');
     }
 }

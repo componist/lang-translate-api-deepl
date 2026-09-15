@@ -1,6 +1,16 @@
 {
     "name": "componist/lang-translate-api-deepl",
-    "keywords": [],
+    "description": "Artisan command to translate Laravel language PHP files via the DeepL API with dry-run support",
+    "keywords": [
+        "laravel",
+        "deepl",
+        "translation",
+        "i18n",
+        "localization",
+        "lang",
+        "artisan",
+        "componist"
+    ],
     "homepage": "https://componist.dev",
     "license": "MIT",
     "authors": [
@@ -10,8 +20,16 @@
             "role": "Developer"
         }
     ],
-    "require": {},
-    "require-dev": {},
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1",
+        "larastan/larastan": "^3.9"
+    },
+    "scripts": {
+        "phpstan": "phpstan analyse -c phpstan.neon.dist"
+    },
     "autoload": {
         "psr-4": {
             "Componist\\LangTranslateApiDeepl\\": "src/"

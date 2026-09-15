@@ -56,8 +56,7 @@ Ein Laravel Package zum automatischen Übersetzen von Sprachdateien mit der Deep
 | **Fehlerbehandlung** | Graceful Handling von Netzwerk- und API-Fehlern |
 | **Timeout-Schutz** | 30-Sekunden Timeout für API-Requests |
 
-## 📦 Installation
-
+## Installation
 ### 1. Package installieren
 
 ```bash
@@ -84,8 +83,7 @@ DEEPL_API_KEY=your_deepl_api_key_here
 2. Erstellen Sie einen kostenlosen API Key (500.000 Zeichen/Monat)
 3. Fügen Sie den Key zur `.env` Datei hinzu
 
-## ⚙️ Konfiguration
-
+## Konfiguration
 ### Umgebungsvariablen
 
 | Variable | Beschreibung | Standard |
@@ -94,8 +92,7 @@ DEEPL_API_KEY=your_deepl_api_key_here
 
 
 
-## 🎮 Verwendung
-
+## Nutzung
 ### Artisan Command
 
 Das Package registriert einen Artisan-Command `translate:lang-file`:
@@ -121,7 +118,6 @@ php artisan translate:lang-file [options] [--] <file>
 ## 📝 Beispiele
 
 ### 1. Grundlegende Verwendung
-
 ```bash
 # Deutsch → Englisch (Standard)
 php artisan translate:lang-file lang/en/messages.php
@@ -285,8 +281,7 @@ php artisan translate:lang-file lang/de/auth.php
 - ✅ Verwenden Sie Batch-Processing für große Projekte
 - ✅ Überwachen Sie API-Limits
 
-## 🔧 Troubleshooting
-
+## Hinweise
 ### Häufige Fehler und Lösungen
 
 #### 1. "DeepL API key not configured"
@@ -365,6 +360,28 @@ chmod 644 lang/de/*.php
 |------|-------|--------|
 | **Free** | 500.000 Zeichen/Monat | Kostenlos |
 | **Pro** | Höhere Limits | Ab €5.99/Monat |
+
+## Commands
+
+| Command | Beschreibung |
+|---------|--------------|
+| `php artisan translate:lang-file {file}` | Übersetzt eine Laravel-Sprachdatei via DeepL |
+| `--source=` / `--target=` | Quell-/Zielsprache (ISO) |
+| `--dry-run` | Vorschau ohne Schreiben |
+
+Siehe Abschnitt „Verwendung“ für Beispiele.
+
+## Berechtigungen
+
+Kein HTTP-Gate — Ausführung nur per Artisan/CLI. DeepL-API-Key ausschließlich über `.env` (`DEEPL_API_KEY` / Config), nie committen.
+
+## Tests
+
+```bash
+php artisan test --compact --testsuite="Lang Translate DeepL"
+```
+
+Unit-Tests mit HTTP-Fake; kein Live-API-Key in CI nötig.
 
 ## 🛠️ Entwicklung
 
